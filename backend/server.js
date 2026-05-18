@@ -1,3 +1,27 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const cors = require('cors');
+
+dotenv.config();
+
+const app = express();
+
+app.use(cors());
+app.use(express.json());
+
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB Connected'))
+  .catch((err) => console.log(err));
+
+app.get('/', (req, res) => {
+  res.send('Resume Builder API Running');
+});
+
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/resume', require('./routes/resumeRoutes'));
+
+module.exports = app;
 // const express = require('express');
 // const dotenv = require('dotenv');
 // const cors = require('cors');
@@ -33,31 +57,31 @@
 // }
 
 // module.exports = app;
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
+// const express = require('express');
+// const dotenv = require('dotenv');
+// const cors = require('cors');
 
-const connectDB = require('./config/db');
+// const connectDB = require('./config/db');
 
-const authRoutes = require('./routes/authRoutes');
-const resumeRoutes = require('./routes/resumeRoutes');
+// const authRoutes = require('./routes/authRoutes');
+// const resumeRoutes = require('./routes/resumeRoutes');
 
-dotenv.config();
+// dotenv.config();
 
-connectDB();
+// connectDB();
 
-const app = express();
+// const app = express();
 
-app.use(cors());
+// app.use(cors());
 
-app.use(express.json());
+// app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Resume Builder API Running');
-});
+// app.get('/', (req, res) => {
+//   res.send('Resume Builder API Running');
+// });
 
-app.use('/api/auth', authRoutes);
+// app.use('/api/auth', authRoutes);
 
-app.use('/api/resume', resumeRoutes);
+// app.use('/api/resume', resumeRoutes);
 
-module.exports = app;
+// module.exports = app;
