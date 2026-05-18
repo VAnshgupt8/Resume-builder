@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import AuthPage from './pages/AuthPage';
+import AuthPage from './pages/Authpage';
 import Dashboard from './pages/Dashboard';
 import Builder from './pages/Builder';
-import Viewresume from './pages/ViewResume';
+import Viewresume from './pages/Viewresume';
 
 function App() {
   return (
