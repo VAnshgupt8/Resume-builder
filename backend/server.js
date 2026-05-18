@@ -1,46 +1,34 @@
-// const express = require('express');
-// const dotenv = require('dotenv');
-// const cors = require('cors');
+require("dotenv").config();
 
-// const connectDB = require('./config/db');
-
-// dotenv.config();
-
-// connectDB();
-
-// const app = express();
-
-// app.use(cors());
-// app.use(express.json());
-
-// app.get('/', (req, res) => {
-//   res.send('Backend Running Successfully');
-// });
-
-// app.use('/api/auth', require('./routes/authRoutes'));
-// app.use('/api/resume', require('./routes/resumeRoutes'));
-
-// module.exports = app;
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-
-const connectDB = require('./config/db');
-
-dotenv.config();
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 
-connectDB();
-
-app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Backend Running Successfully');
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+app.get("/", (req, res) => {
+  res.send("Backend Running Successfully");
 });
 
-app.use('/api/auth', require('./routes/authRoutes'));
-app.use('/api/resume', require('./routes/resumeRoutes'));
+mongoose
+  .connect(process.env.DB_URL)
+  .then(() => {
+    console.log("MongoDB Connected");
 
-module.exports = app;
+    const PORT = process.env.PORT || 10000;
+
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
