@@ -1,35 +1,16 @@
-// import axios from 'axios';
-
-// const API = axios.create({
-//   baseURL: 'http://localhost:5000/api',
-// });
-
-// API.interceptors.request.use((req) => {
-//   const user = JSON.parse(localStorage.getItem('user'));
-
-//   if (user?.token) {
-//     req.headers.Authorization = `Bearer ${user.token}`;
-//   }
-
-//   return req;
-// });
-
-// export default API;
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: 'https://resume-builder-4-dzf7.onrender.com/api',
 });
 
-API.interceptors.request.use((req) => {
-
+// Attach JWT token to every request
+API.interceptors.request.use((config) => {
   const user = JSON.parse(localStorage.getItem('user'));
-
   if (user?.token) {
-    req.headers.Authorization = `Bearer ${user.token}`;
+    config.headers.Authorization = `Bearer ${user.token}`;
   }
-
-  return req;
+  return config;
 });
 
 export default API;
