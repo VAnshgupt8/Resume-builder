@@ -4,7 +4,7 @@ const API = axios.create({
   baseURL: 'https://resume-builder-4-dzf7.onrender.com/api',
 });
 
-// Attach JWT token to every request
+
 API.interceptors.request.use((config) => {
   const user = JSON.parse(localStorage.getItem('user'));
   if (user?.token) {

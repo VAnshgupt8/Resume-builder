@@ -10,7 +10,7 @@ const resumeRoutes = require("./routes/resumeRoutes");
 const app = express();
 
 app.use(cors({
-  origin: 'https://resume-builder-6-vx4y.onrender.com/' 
+  origin: 'https://resume-builder-6-vx4y.onrender.com' 
 }));
 app.use(express.json());
 
