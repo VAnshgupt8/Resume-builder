@@ -29,6 +29,7 @@ from "./routes/ProtectedRoute";
 import CreateResume from "./pages/CreateResume";
 import EditResume from "./pages/EditResume";
 import ResumeDetails from "./pages/ResumeDetails";
+import PublicResume from './pages/PublicResume'; // or wherever the file actually lives
 
 import {
  ToastContainer
