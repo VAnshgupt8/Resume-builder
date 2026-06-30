@@ -1,6 +1,6 @@
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { Toaster } from "react-hot-toast";
-import { AuthProvider } from "@/context/AuthContext.jsx";
+import { AuthProvider } from "@/context/authContext.jsx";
 import { ResumeProvider } from "@/context/ResumeContext.jsx";
 import { SettingsProvider } from "@/context/SettingsContext.jsx";
 
