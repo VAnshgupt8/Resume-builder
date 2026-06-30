@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { useAuth } from "./AuthContext.jsx";
+import { useAuth } from "./authContext.jsx";
 
 const ResumeContext = createContext(null);
 const KEY = (uid) => `lumen_resumes_${uid}`;
