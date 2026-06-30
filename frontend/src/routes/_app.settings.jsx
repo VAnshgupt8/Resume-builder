@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import toast from "react-hot-toast";
 import { useSettings } from "@/context/SettingsContext.jsx";
 import { useResumes } from "@/context/ResumeContext.jsx";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 
 export const Route = createFileRoute("/_app/settings")({
   component: SettingsPage,

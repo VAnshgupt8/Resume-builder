@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "@tanstack/react-router";
 import Sidebar from "@/components/Sidebar.jsx";
 import Navbar from "@/components/Navbar.jsx";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Link, useRouterState } from "@tanstack/react-router";

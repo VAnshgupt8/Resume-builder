@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
 import { FileText, Loader2 } from "lucide-react";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 
 export const Route = createFileRoute("/login")({
   validateSearch: (s) => ({ redirect: typeof s.redirect === "string" ? s.redirect : undefined }),

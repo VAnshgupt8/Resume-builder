@@ -7,7 +7,7 @@ import {
 import {
   FilePlus2, FileText, LayoutTemplate, ShieldCheck, Sparkles, Clock, TrendingUp,
 } from "lucide-react";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 import { useResumes } from "@/context/ResumeContext.jsx";
 import { computeAtsScore } from "@/utils/atsScore.js";
 

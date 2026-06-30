@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 import { useSettings } from "@/context/SettingsContext.jsx";
 import { Moon, Sun, LogOut, User, Menu } from "lucide-react";
 

@@ -2,7 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, ShieldCheck, FileText, Wand2, Layers, Download } from "lucide-react";
 import { useEffect } from "react";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 
 export const Route = createFileRoute("/")({
   component: Landing,
