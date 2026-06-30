@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useState } from "react";
 import { Loader2, CheckCircle2 } from "lucide-react";
-import { useAuth } from "@/context/AuthContext.jsx";
+import { useAuth } from "@/context/authContext.jsx";
 import { AuthShell, Field } from "./login.jsx";
 
 export const Route = createFileRoute("/forgot-password")({
